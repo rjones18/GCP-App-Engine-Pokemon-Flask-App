@@ -1,6 +1,6 @@
 steps:
 - id: 'Unit Test'
-  name: gcr.io/distroless/python3
+  name: gcr.io/alert-flames-286515/pythonbaseimage:v1
   entrypoint: python3
   args:
   - test_app.py
