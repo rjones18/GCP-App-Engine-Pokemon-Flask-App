@@ -1,6 +1,6 @@
 steps:
 - id: 'Unit Test'
-  name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  name: 'gcr.io/cloud-builders/docker'
   entrypoint: 'bash'
   args: ['-c', 'python test_app.py']
 
