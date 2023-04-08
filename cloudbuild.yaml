@@ -1,4 +1,9 @@
 steps:
+- id: 'Install flask'
+  name: 'gcr.io/google-appengine/python'
+  entrypoint: 'bash'
+  args: ['-c', 'pip install Flask']
+
 - id: 'Unit Test'
   name: 'gcr.io/google-appengine/python'
   entrypoint: 'bash'
