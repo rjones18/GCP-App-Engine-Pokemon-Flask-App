@@ -1,6 +1,6 @@
 steps:
 - id: 'Unit Test'
-  name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  name: 'gcr.io/google-appengine/python:3.9'
   entrypoint: 'bash'
   args: ['-c', 'python3 test_app.py']
 
