@@ -1,5 +1,6 @@
 steps:
-- id: 'IUnit Test'
+- id: 'Unit Test'
+  name: gcr.io/distroless/python3
   entrypoint: python3
   args:
   - test_app.py
