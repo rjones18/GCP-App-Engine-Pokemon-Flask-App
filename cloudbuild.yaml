@@ -1,6 +1,6 @@
 steps:
 - id: 'Install flask Unit Test'
-  name: 'gcr.io/google-appengine/python'
+  name: 'gcr.io/distroless/python3'
   entrypoint: 'bash'
   args: ['-c', 'pip install flask && python3 test_app.py']
 
