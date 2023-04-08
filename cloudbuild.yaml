@@ -1,13 +1,8 @@
 steps:
-- id: 'Install flask'
+- id: 'Install flask Unit Test'
   name: 'gcr.io/google-appengine/python'
   entrypoint: 'bash'
-  args: ['-c', 'pip install Flask']
-
-- id: 'Unit Test'
-  name: 'gcr.io/google-appengine/python'
-  entrypoint: 'bash'
-  args: ['-c', 'python3 test_app.py']
+  args: ['-c', 'pip install Flask && python3 test_app.py']
 
 - id: 'Deploy to App Engine'
   name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
