@@ -1,15 +1,36 @@
+import json
 import unittest
-from main import app
+from pokeapi_app import app
 
-class TestMyApp(unittest.TestCase):
-    
+class TestPokeapiApp(unittest.TestCase):
+
     def setUp(self):
-        self.client = app.test_client()
-        
-    def test_home_page(self):
-        response = self.client.get('/')
-        self.assertEqual(response.status_code, 200)
-        self.assertIn(b'<h1>Python Flask App</h1>', response.data)
+        self.app = app.test_client()
 
-if __name__ == '__main__':
+    def tearDown(self):
+        pass
+
+    def test_valid_pokemon(self):
+        response = self.app.get('/pokemon/pikachu')
+        data = json.loads(response.data)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertIn('name', data)
+        self.assertIn('weight', data)
+        self.assertIn('height', data)
+        self.assertIn('types', data)
+        self.assertIn('abilities', data)
+        self.assertIn('sprite', data)
+        self.assertIn('stats', data)
+
+    def test_invalid_pokemon(self):
+        response = self.app.get('/pokemon/invalid-pokemon-name')
+        data = json.loads(response.data)
+
+        self.assertEqual(response.status_code, 404)
+        self.assertIn('error', data)
+        self.assertEqual(data['error'], 'Pokemon not found')
+
+if __name__ == "__main__":
     unittest.main()
+

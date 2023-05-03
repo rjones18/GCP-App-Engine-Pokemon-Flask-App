@@ -1,26 +1,41 @@
-<!DOCTYPE html lang>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
-    <title>Reggie Jones - Learning HTML</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Pokémon Info</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
-
 <body>
-    <main>
-    <img class="profile" src="{{ url_for('static', filename='appengine.png') }}" alt="Reggie's Profile Picture">
-    <h1>Python Flask App</h1>
-    <p>
-        Hello my name is Reggie. This app was deployed using Google App Engine!!!
-    </p>
-    <p>
-        With Google App Engine developers can build monolithic server-side rendered websites. App Engine supports popular development languages with a range of developer tools.
-
-
-    </p>
-</main>
-
+<!-- Update the HTML content with Bootstrap classes -->
+    <div class="container">
+        <h1 class="mb-4">Pokémon Pokedex</h1>
+        <form id="pokemon-form" class="form-inline">
+            <label class="mr-2" for="pokemon-name">Enter Pokémon Name:</label>
+            <input type="text" class="form-control mr-2" id="pokemon-name" name="pokemon-name" required>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        <div id="pokemon-info" class="mt-4" style="display:none;">
+            <img id="sprite" src="" alt="Pokemon sprite" class="img-fluid mb-3">
+            <h2 id="name"></h2>
+            <p>Weight: <span id="weight"></span></p>
+            <p>Height: <span id="height"></span></p>
+            <p>Types: <span id="types"></span></p>
+            <p>Abilities: <span id="abilities"></span></p>
+            <div id="stats">  <!-- Add this div for stats -->
+                <h3>Stats:</h3>
+                <ul id="stats-list" class="list-unstyled"></ul>
+            </div>
+        </div>
+        <div id="error" class="mt-4 alert alert-danger" style="display:none;">
+            <p>Pokémon not found.</p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </body>
+</html>
+
