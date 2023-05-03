@@ -1,9 +1,9 @@
-# GCP-App-Engine-Flask-Application
-In this project, I executed the deployment of a Python-based Flask web application onto Google App Engine, utilizing its robust infrastructure and scalability features. By seamlessly integrating the GitHub repository with Google Cloud Source Repositories, I established a streamlined Continuous Deployment (CD) pipeline.
+# GCP-Pokemon-Info-Flask-App
+In this project, I developed a Python-based Flask web application that retrieves and displays Pokémon information using the PokeAPI. The application was deployed on Google App Engine, leveraging its powerful infrastructure and scalability features. By integrating the GitHub repository with Google Cloud Source Repositories, I created an efficient Continuous Deployment (CD) pipeline.
 
-To enhance the code quality and ensure seamless updates, I integrated Cloud Build, which facilitated automated unit testing and deployment of code modifications to App Engine. This process effectively reduced manual intervention and mitigated the risk of introducing potential errors.
+To improve code quality and ensure smooth updates, I incorporated Cloud Build into the pipeline, enabling automated unit testing and deployment of code changes to App Engine. This approach minimized manual intervention and reduced the likelihood of introducing potential errors during the deployment process.
 
-Furthermore, I incorporated a custom domain name acquired through Google Domains, thus providing a professional and user-friendly web address for the application, bolstering its credibility and overall user experience.
+Additionally, I employed a custom domain name obtained from Google Domains, providing the application with a professional and user-friendly web address. This enhancement improved the application's credibility and overall user experience, making it an appealing and reliable resource for Pokémon enthusiasts.
 
 Link to Website: https://pythonapp.reggietestgcpdomain.com
 
