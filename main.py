@@ -13,9 +13,8 @@ def get_pokemon(pokemon_name):
     if response.status_code == 200:
         try:
             pokemon_data = response.json()
-        except requests.exceptions.JSONDecodeError:
-            return jsonify({"error": "Error decoding JSON data"}), 500
-        result = {
+
+            result = {
             "name": pokemon_data["name"],
             "weight": pokemon_data["weight"],
             "height": pokemon_data["height"],
@@ -24,7 +23,9 @@ def get_pokemon(pokemon_name):
             "sprite": pokemon_data["sprites"]["front_default"],
             "stats": {stat["stat"]["name"]: stat["base_stat"] for stat in pokemon_data["stats"]},
         }
-        return jsonify(result)
+            return jsonify(result)
+        except requests.exceptions.JSONDecodeError:
+            return jsonify({"error": "Error decoding JSON data"}), 500
     else:
         return jsonify({"error": "Pokemon not found"}), 404
 
