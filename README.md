@@ -1,5 +1,5 @@
 # GCP-App-Engine-Pokemon-Flask-App
-In this project, I developed a Python-based Flask web application that retrieves and displays Pokémon information using the PokeAPI. The application was deployed on Google App Engine, leveraging its powerful infrastructure and scalability features. By integrating the GitHub repository with Google Cloud Source Repositories, I created an efficient Continuous Deployment (CD) pipeline.
+In this project, I developed a Python-based Flask web application that retrieves and displays Pokémon information using the PokeAPI. The application was deployed on Google App Engine, leveraging its powerful infrastructure and scalability features. By integrating the GitHub repository with Google Cloud Source Repositories, I created an efficient Continuous Deployment (CD) pipeline. I also included Snyk for vulnerability monitoring.
 
 To improve code quality and ensure smooth updates, I incorporated Cloud Build into the pipeline, enabling automated unit testing and deployment of code changes to App Engine. This approach minimized manual intervention and reduced the likelihood of introducing potential errors during the deployment process.
 
