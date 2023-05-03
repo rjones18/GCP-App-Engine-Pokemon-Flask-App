@@ -1,3 +1,4 @@
+import json
 import requests
 from flask import Flask, jsonify, render_template
 
@@ -11,6 +12,11 @@ def get_pokemon(pokemon_name):
     response = requests.get(f"{POKEAPI_BASE_URL}/pokemon/{pokemon_name.lower()}")
     
     if response.status_code == 200:
+        try:
+            pokemon_data = response.json()
+        except json.decoder.JSONDecodeError:
+            return jsonify({"error": "Error decoding JSON data"}), 500
+            
         pokemon_data = response.json()
         result = {
             "name": pokemon_data["name"],
