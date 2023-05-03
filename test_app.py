@@ -1,6 +1,6 @@
 import json
 import unittest
-from pokeapi_app import app
+from main import app
 
 class TestPokeapiApp(unittest.TestCase):
 
