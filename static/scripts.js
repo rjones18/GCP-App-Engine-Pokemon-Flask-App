@@ -24,6 +24,7 @@ document.getElementById("pokemon-form").addEventListener("submit", function (eve
               listItem.textContent = `${statName}: ${statValue}`;
               statsList.appendChild(listItem);
           }
+          
         }
       });
   });

@@ -11,10 +11,8 @@ def get_pokemon(pokemon_name):
     response = requests.get(f"{POKEAPI_BASE_URL}/pokemon/{pokemon_name.lower()}")
     
     if response.status_code == 200:
-        try:
-            pokemon_data = response.json()
-
-            result = {
+        pokemon_data = response.json()
+        result = {
             "name": pokemon_data["name"],
             "weight": pokemon_data["weight"],
             "height": pokemon_data["height"],
@@ -23,9 +21,7 @@ def get_pokemon(pokemon_name):
             "sprite": pokemon_data["sprites"]["front_default"],
             "stats": {stat["stat"]["name"]: stat["base_stat"] for stat in pokemon_data["stats"]},
         }
-            return jsonify(result)
-        except requests.exceptions.JSONDecodeError:
-            return jsonify({"error": "Error decoding JSON data"}), 500
+        return jsonify(result)
     else:
         return jsonify({"error": "Pokemon not found"}), 404
 
