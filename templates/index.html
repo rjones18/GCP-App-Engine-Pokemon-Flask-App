@@ -15,6 +15,7 @@
 <!-- Update the HTML content with Bootstrap classes -->
     <div class="container">
         <h1 class="mb-4">Pokémon Pokedex</h1>
+        <img class="code" src="static/pokedex.jpg" alt="pokedex">
         <form id="pokemon-form" class="form-inline">
             <label class="mr-2" for="pokemon-name">Enter Pokémon Name:</label>
             <input type="text" class="form-control mr-2" id="pokemon-name" name="pokemon-name" required>
@@ -40,11 +41,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="{{ url_for('static', filename='scripts.js') }}"></script>
-    <!-- Add a footer -->
-    <footer class="footer mt-auto py-3 bg-dark text-white">
-        <div class="container text-center">
-            <span>© 2023 Pokémon Pokedex</span>
-        </div>
-    </footer>
 </body>
 </html>

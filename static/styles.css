@@ -1,3 +1,13 @@
+.container {
+    max-width: 500px;
+    padding-top: 2rem;
+}
+*,
+*::before
+*::after{
+    box-sizing: inherit;
+}
+
 body {
     background-color: #f5f5f5;
     display: flex;
@@ -5,9 +15,17 @@ body {
     min-height: 100vh;
 }
 
-.container {
-    max-width: 800px;
-    padding-top: 2rem;
+main {
+    max-width: 35rem;
+    margin: 3.75rem auto 0 auto;
+}
+
+p{
+    line-height: 150%;
+}
+
+img {
+    max-width: 100%;
 }
 
 .btn:hover {
